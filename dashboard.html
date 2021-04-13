@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChartJS</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.min.js"></script>
+    
+<style>
+    .meu-grafico {
+    width: 60%;
+    margin: auto;
+}
+</style>
+
+</head>
+
+<body>
+
+    <div class="meu-grafico">
+
+        <canvas id="myChart"></canvas>
+
+        <center>
+        <h3>Regiões Brasileiras</h3>
+    </center>
+</body>
+
+</html>
+
+<script>
+ 
+    var ctx = document.getElementById('myChart');
+
+
+    var meuGrafico = new Chart(ctx, {
+
+        type: 'bar',
+
+
+        data: {
+
+            labels: ["Norte", "Nordeste", "Suldeste", "Sul", "Centro-Oeste"],
+
+            datasets: [
+
+            {
+
+                label: "Possuiam",
+
+                data: [37, 36, 56, 62, 58],
+
+                borderWidth: 10,
+
+
+                borderColor: 'black',
+
+                backgroundColor: 'transparent',
+            },
+
+
+            {
+
+                type: 'bar',
+                label: "Não Possuiam",
+                data: [63, 64, 44, 38, 42],
+                borderWidth: 10,
+                borderColor: 'lightgreen',
+                backgroundColor: 'transparent'
+            }
+            ]
+        },
+        
+
+        options: {
+            
+            title: {
+
+                display: true,
+
+                fontSize: 20,
+
+                text: "Estudantes que possuem telefone móvel celular com idade de 10 anos ou mais",
+
+                position: 'top',
+            },
+            legend: {
+
+                display: true,
+
+                reverse: true,
+
+                position: 'right'
+            },
+            layout: {
+            padding: {
+
+                left: 50,
+                top: 50
+            },
+           
+        }
+        }
+    })
+
+    Chart.defaults.global.defaultFontColor = "black";
+</script>
